@@ -19,7 +19,7 @@ $sheetName = "Sheet1"
 $columnName = "Last6Digit" 
 
 # AD group name - Replace with your actual AD group name
-$groupName = "App_RightFax_Product_Suite_10.6" 
+$groupName = "BH_Onepiece_RW" 
 
 # Path to save the log CSV file - Update the path to your log CSV file
 $logFilePath = "C:\Users\komminenis\Documents\app installtion logs\addADGroupToPCsLog.csv" 
