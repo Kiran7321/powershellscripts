@@ -10,7 +10,7 @@ $outputFile = "C:\Users\komminenis\Documents\outputExistUsers2.csv"
 $data = Import-Csv $inputFile
 
 # Define the search base (the root of your AD tree, adjust as needed)
-$searchBase = "DC=baysidehealth,DC=intra"
+$searchBase = "DC=onepiece,DC=luffytaro"
 
 # Loop through each row in the input data
 foreach ($row in $data) {
