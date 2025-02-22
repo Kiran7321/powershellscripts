@@ -24,8 +24,8 @@ $moveCol = 5         # New column "Move" will be in column E
 $worksheet.Cells.Item(1, $moveCol) = "Move"
 
 # Define the OUs
-$DoctorsOU = "OU=Doctors,OU=O365,OU=Monash,OU=Users,OU=External,OU=BaysideHealth,DC=baysidehealth,DC=intra"
-$WomensOU = "OU=Womens,OU=O365,OU=Monash,OU=Users,OU=External,OU=BaysideHealth,DC=baysidehealth,DC=intra"
+$PiratesOU = "OU=pirates,DC=onepiece,DC=strawhats"
+$SnipersOU = "OU=snipers,DC=onepiece,DC=strawhats"
 
 # Iterate through each row
 for ($row = 2; $row -le $lastRow; $row++) {
@@ -37,11 +37,11 @@ for ($row = 2; $row -le $lastRow; $row++) {
 
     if ($user) {
         try {
-            if ($type -eq "Doctors") {
-                Move-ADObject -Identity $user.DistinguishedName -TargetPath $DoctorsOU -ErrorAction Stop
+            if ($type -eq "Pirates") {
+                Move-ADObject -Identity $user.DistinguishedName -TargetPath $PiratesOU-ErrorAction Stop
                 $worksheet.Cells.Item($row, $moveCol) = "Yes"
-            } elseif ($type -eq "Womens") {
-                Move-ADObject -Identity $user.DistinguishedName -TargetPath $WomensOU -ErrorAction Stop
+            } elseif ($type -eq "Snipers") {
+                Move-ADObject -Identity $user.DistinguishedName -TargetPath $SnipersOU -ErrorAction Stop
                 $worksheet.Cells.Item($row, $moveCol) = "Yes"
             } else {
                 $worksheet.Cells.Item($row, $moveCol) = "No - Type Not Specified"
