@@ -1,11 +1,11 @@
 ﻿# Define the OU for users
-$ou = "OU=O365,OU=Remote Access Monitors,OU=Users,OU=External,OU=BaysideHealth,DC=baysidehealth,DC=intra"
+$ou = "OU=pirates,DC=onepiece,DC=strawhats"
 
 # Get all users in the specified OU
 $users = Get-ADUser -Filter * -SearchBase $ou -Properties Manager, DisplayName
 
 # Define the username or email of the new manager
-$newManagerUsername = "wongjeffr"  # Update with the username or email of the new manager
+$newManagerUsername = "golddr"  # Update with the username or email of the new manager
 
 # Get the user object of the new manager
 $newManager = Get-ADUser -Filter "SamAccountName -eq '$newManagerUsername' -or EmailAddress -eq '$newManagerUsername'"
@@ -16,7 +16,7 @@ if ($newManager) {
         $managerFieldValue = $user.Manager
 
         # If Manager field matches the old manager's canonical name, update it
-        if ($managerFieldValue -eq "CN=Kennedy\, Nola,OU=O365,OU=BONEMARROW,OU=Users,OU=BaysideHealth,DC=baysidehealth,DC=intra") {
+        if ($managerFieldValue -eq "CN=Luffy\, D monkey,OU=pirates,DC=onepiece,DC=strawhats") {
             Set-ADUser -Identity $user.DistinguishedName -Manager $newManager.DistinguishedName
             Write-Host "Updated manager for $($user.DisplayName) successfully."
         }
