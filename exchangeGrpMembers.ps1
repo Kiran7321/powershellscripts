@@ -2,8 +2,8 @@
 
 
 # Define variables
-$GroupEmail = "f2nursing@alfredhealthconnect.onmicrosoft.com"  # Replace with your group's email
-$OutputFilePath = "C:\Users\komminenis\Documents\f2GrpMembers.csv"  # Replace with your desired file path
+$GroupEmail = "onepiece.onmicrosoft.com"  # Replace with your group's email
+$OutputFilePath = "C:\Users\komminenis\Documents\onepieceGrpMembers.csv"  # Replace with your desired file path
 
 # Retrieve the group using the email
 $group = Get-AzureADGroup -Filter "Mail eq '$GroupEmail'"
