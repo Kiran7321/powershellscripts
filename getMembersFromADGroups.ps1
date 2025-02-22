@@ -1,5 +1,5 @@
 ﻿# Define the group names and output file path
-$groupNames = @("BH_CYMHS_management_RW", "BH_Headspace YEPP_RW", "BH_Headspace YEPP_Executive_RW", "BH_Headspace YEPP_SMT_RW", "Bh_HeadspaceYepp_HR_RW")
+$groupNames = @("BH_Strawhats_RW", "Bh_OnePiece_RW")
 $outputFile = "C:\Users\komminenis\Documents\temp\RW-Members.xlsx"
 
 # Initialize an empty array to store results
