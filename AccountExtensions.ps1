@@ -14,7 +14,7 @@ $outputFile = "C:\Users\komminenis\Documents\account extension logs\Account Exte
 $data = Import-Excel -Path $excelFilePath
 
 # Define the search base (the root of your AD tree, adjust as needed)
-$searchBase = "DC=baysidehealth,DC=intra"
+$searchBase = "DC=onepiece,DC=luffytaro"
 
 # Loop through the data in the Excel file
 foreach ($row in $data) {
@@ -29,11 +29,7 @@ foreach ($row in $data) {
         if ($user) {
             $fullName = $user.Name
 
-            if ($user.Description -match "INTERN" -or $user.Office -match "HMO") {
-                # Set the account to never expire if Description contains "INTERN" or Office contains "HMO"
-                Clear-ADAccountExpiration -Identity $user.DistinguishedName
-                Write-Host "Account for user $fullName set to never expire (Description contains 'INTERN' or Office contains 'HMO')."
-            } elseif ($expirationDate -eq '01/01/2101') {
+            if ($expirationDate -eq '01/01/2101') {
                 # Clear the account expiration if expiration date is '01/01/2101'
                 Clear-ADAccountExpiration -Identity $user.DistinguishedName
                 Write-Host "Account for user $fullName set to never expire (expiration date is '01/01/2101')."
