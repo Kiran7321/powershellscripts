@@ -11,5 +11,5 @@ $ExcelData = Import-Excel -Path $ExcelFilePath
 # Loop through each row and set permissions
 foreach ($row in $ExcelData) {
     $UserEmail = $row.Email.Trim()
-    Add-MailboxFolderPermission -Identity AlbertRoadLevel3WrenMeetingRoom@alfred.org.au:\Calendar -User $UserEmail -AccessRights Reviewer
+    Add-MailboxFolderPermission -Identity calendarnameoremail:\Calendar -User $UserEmail -AccessRights Reviewer
 }
