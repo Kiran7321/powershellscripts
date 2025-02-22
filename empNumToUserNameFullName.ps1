@@ -12,7 +12,7 @@ $outputFile = "C:\Users\komminenis\Documents\employee num details\detailsOutput1
 $data = Import-Excel -Path $excelFilePath
 
 # Define the search base (the root of your AD tree, adjust as needed)
-$searchBase = "DC=baysidehealth,DC=intra"
+$searchBase = "DC=onepiece,DC=luffytaro"
 
 # Loop through the data in the Excel file
 foreach ($row in $data) {
@@ -20,7 +20,7 @@ foreach ($row in $data) {
 
     if ($employeeNumber) {
         $employeeNumber = "000" + $employeeNumber
-        $filter = "(&(objectClass=user)(objectCategory=person)(postOfficeBox=$employeeNumber))"
+        $filter = "(&(objectClass=user)(objectCategory=person)(postOfficeBox=$employeeNumber))" # assuming that the org uses po box to store employee number
         $user = Get-ADUser -LDAPFilter $filter -SearchBase $searchBase -Properties Description, Office
 
         if ($user) {
