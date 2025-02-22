@@ -2,7 +2,7 @@
 Import-Module ActiveDirectory
 
 # Define the Organizational Unit (OU) to search
-$OU = "OU=O365,OU=WOMENS,OU=Users,OU=BaysideHealth,DC=baysidehealth,DC=intra"
+$OU = "OU=pirates,DC=onepiece,DC=strawhats"
 
 # Define the output Excel file path
 $ExcelFilePath = "C:\Users\komminenis\Documents\userListFromOU.xlsx"
